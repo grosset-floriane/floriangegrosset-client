@@ -2,7 +2,11 @@ const initialState = {
     isOpen: false
 }
 
-const menuReducer = (state = initialState, action) => {
+interface Action {
+    type: string
+}
+
+const menuReducer = (state = initialState, action: Action) => {
     switch(action.type) {
         case 'TOGGLE_MENU':
             return { ...state, isOpen: !state.isOpen };

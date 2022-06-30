@@ -2,7 +2,7 @@ import React from 'react'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
-import { Link } from 'react-router-dom'
+import { NavLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Typography } from '@mui/material/'
 import useStyles from './Navigation.styles'
@@ -15,19 +15,11 @@ interface Props {
 function NavItem({ to, text }: Props) {
   const classes = useStyles()
 
-  // function renderLink(to) {
-  //   return renderLink = React.useMemo(
-  //     () =>
-  //       React.forwardRef((itemProps, ref) => {
-  //         return <Link to={to} ref={ref} {...itemProps} role={undefined} />;
-  //       }),
-  //     [to],
-  //   );
-  // }
+
   const renderLink = React.useMemo(
     () =>
-      React.forwardRef((itemProps, ref) => {
-        return <Link to={to} ref={ref} {...itemProps} role={undefined} />
+      React.forwardRef<any, Omit<RouterLinkProps, 'to'>>((itemProps, ref) => {
+        return <NavLink to={to} ref={ref} {...itemProps} role={undefined} />
       }),
     [to],
   )

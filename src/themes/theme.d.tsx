@@ -1,29 +1,12 @@
-import { Theme, ThemeOptions, Palette } from '@mui/material/styles'
-import { ListItemButtonProps } from '@mui/material/ListItemButton/ListItemButton'
-import { OverridableStringUnion } from '@mui/types'
-import { SvgIconPropsColorOverrides } from '@mui/material/SvgIcon'
-// declare module '@mui/material/styles' {
-//   interface CustomTheme extends Theme {
-//     status: {
-//       danger: string
-//     }
-//   }
-//   // allow configuration using `createTheme`
-//   interface CustomThemeOptions extends ThemeOptions {
-//     status?: {
-//       danger?: string
-//     }
-//   }
-//   export function createTheme(options?: CustomThemeOptions): CustomTheme
-// }
+import { Theme } from '@mui/material/styles'
 
-// declare module '@material-ui/core/styles/createMuiTheme' {
-//         interface ThemeOptions {
-//           status: {
 
-//           }
-//         }
-//     }
+
+
+declare module '@mui/styles/defaultTheme' {
+  // eslint-disable-next-line @typescript-eslint/no-empty-interface 
+  interface DefaultTheme extends Theme {}
+}
 
 declare module '@mui/material/styles' {
   interface Theme {
@@ -50,11 +33,6 @@ declare module '@mui/material/ListItemIcon' {
   }
 }
 
-// declare module '@mui/material/ListItemButton' {
-//   interface ListItemButtonPropsVariantOverrides {
-//     centered: true
-//   }
-// }
 
 declare module '@mui/material/styles' {
   interface TypographyVariants {
@@ -95,5 +73,11 @@ declare module '@mui/material/Typography' {
     subtitle: true
     subtitleSmall: true
     buttonCaps: true
+  }
+}
+
+declare module '@mui/material/AppBar' {
+  interface AppBarPropsColorOverrides {
+    background: true;
   }
 }

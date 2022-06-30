@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     color: 'black',
   },
   AppBar: {
-    backgroundColor: theme.palette.background.main,
+    backgroundColor: theme.palette.background.default,
   },
 }))
 

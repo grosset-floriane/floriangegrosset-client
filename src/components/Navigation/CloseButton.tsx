@@ -15,7 +15,7 @@ function CloseButton() {
         TouchRippleProps={{ className: classes.buttonRipple }}
       >
         <ListItemIcon variant="centered">
-          <CloseIcon color="active" />
+          <CloseIcon color="action" />
         </ListItemIcon>
       </ListItemButton>
     </ListItem>

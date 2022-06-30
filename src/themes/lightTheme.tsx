@@ -11,11 +11,12 @@ const lightTheme = createTheme({
     secondary: {
       main: '#C2B49E',
     },
-    active: {
-      main: '#000000d4',
+    action: {
+      active: '#000000d4',
     },
     background: {
-      main: '#ECECEC',
+      default: '#ECECEC',
+      paper: '#ECECEC',
     },
   },
   typography: {

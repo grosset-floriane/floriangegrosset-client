@@ -5,17 +5,25 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import MuiLink from '@mui/material/Link'
 import MenuButton from '../../features/menu/MenuButton'
-import { Link as RouterLink } from 'react-router-dom'
+import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import useStyles from './TopAppBar.styles'
 import { useSelector } from 'react-redux'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Slide from '@mui/material/Slide'
+import {useTypedSelector} from 'redux/typedSelector'
 
 import Logo from './Logo'
 
+interface Props {
+  children: React.ReactNode
+  isOpen: boolean
+}
+
+ // @ts-ignore
 function HideOnScroll({ children, isOpen }) {
   const trigger = useScrollTrigger()
 
+ 
   return (
     <Slide appear={false} direction="down" in={isOpen ? true : !trigger}>
       {children}
@@ -25,12 +33,12 @@ function HideOnScroll({ children, isOpen }) {
 
 function TopAppBar() {
   const classes = useStyles()
-  const { isOpen } = useSelector((state) => state.menu)
+  const { isOpen } = useTypedSelector((state) => state.menu)
 
   const to = '/'
   const renderLink = React.useMemo(
     () =>
-      React.forwardRef((itemProps, ref) => {
+      React.forwardRef<any, Omit<RouterLinkProps, 'to'>>((itemProps, ref) => {
         return <RouterLink to={to} ref={ref} {...itemProps} role={undefined} />
       }),
     [to],
