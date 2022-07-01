@@ -61,7 +61,7 @@ function TopAppBar() {
                 component="div"
                 sx={{ ml: 2, position: 'relative', top: 0 }}
               >
-                Flo's <br /> — Web Design
+                Florian(e) <br /> — Grosset
               </Typography>
             </MuiLink>
 
