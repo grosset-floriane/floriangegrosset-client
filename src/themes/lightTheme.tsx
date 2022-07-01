@@ -22,11 +22,6 @@ const lightTheme = createTheme({
   typography: {
     fontFamily: BODY_FONT,
     fontSize: 20,
-    h1: {
-      fontFamily: TITLE_FONT,
-      fontSize: 103,
-      letterSpacing: '-0.15rem',
-    },
     h2: {
       fontFamily: TITLE_FONT,
       fontSize: 64,
@@ -180,5 +175,15 @@ const lightTheme = createTheme({
     },
   },
 })
+
+lightTheme.typography.h1 = {
+  fontSize: '3.6rem',
+  fontFamily: TITLE_FONT,
+  letterSpacing: '-0.15rem',
+  fontWeight: 700,
+  [lightTheme.breakpoints.up('md')]: {
+    fontSize: '10.3rem',
+  },
+};
 
 export default lightTheme
