@@ -6,6 +6,8 @@ import { NavLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { Typography } from '@mui/material/'
 import useStyles from './Navigation.styles'
+import {useDispatch} from 'react-redux'
+import {toggleMenu} from 'features/menu/menuActions'
 
 interface Props {
   to: string
@@ -14,7 +16,7 @@ interface Props {
 
 function NavItem({ to, text }: Props) {
   const classes = useStyles()
-
+  const dispatch = useDispatch()
 
   const renderLink = React.useMemo(
     () =>
@@ -30,6 +32,7 @@ function NavItem({ to, text }: Props) {
         variant="centered"
         component={renderLink}
         TouchRippleProps={{ className: classes.buttonRipple }}
+        onClick={() => dispatch(toggleMenu())} 
       >
         <ListItemText primary={<Typography variant="h4">{text}</Typography>} />
       </ListItemButton>
