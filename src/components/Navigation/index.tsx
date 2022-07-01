@@ -14,8 +14,7 @@ function Navigation() {
         <Box className={classes.container}>
             <nav className={classes.nav}>
                 <List>
-                    <NavItem to="/" text="Works" />
-                    <NavItem to="/about" text="About" />
+                    <NavItem to="/" text="About" />
                     <NavItem to="/contact" text="Contact" />
                     <CloseButton />
                 </ List>
