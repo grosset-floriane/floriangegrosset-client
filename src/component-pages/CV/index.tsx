@@ -8,8 +8,8 @@ const CV = () => {
         CV
       </Typography>
       <Typography variant="bodyImpact">
-      I am a passionate frontend engineer especially interested in creating accessible web experiences, and shipping reliable and tailored web applications.
-      </Typography>
+      I am a passionate frontend engineer interested in creating accessible web experiences and shipping reliable and tailored web applications.
+            </Typography>
 
     </>
   )

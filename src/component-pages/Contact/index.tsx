@@ -8,7 +8,7 @@ const Contact = () => {
         Contact
       </Typography>
       <Typography variant="bodyImpact">
-      The easiest way to contact me is by email. Don’t hesitate to drop a line to say hi!
+      The easiest way to contact me is by email. Don’t hesitate to drop me a line to say hi!
       </Typography>
       <Typography>
       contact@florianegrosset.com
