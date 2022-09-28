@@ -9,6 +9,11 @@ I am currently building the MVP (Minimum Viable Product) for my personal website
 - Not yet online
 - Mobile only at the moment
 
+## In doing
+
+- Set up eslint
+- Fix typescript
+
 ## Coming
 
 - Reusable components
