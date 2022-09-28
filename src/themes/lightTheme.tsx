@@ -78,6 +78,7 @@ const lightTheme = createTheme({
       fontWeight: 700,
       letterSpacing: '.15rem',
       fontSize: 24,
+      marginBottom: 32,
     },
     bodySmall: {
       fontSize: 16,
@@ -120,6 +121,38 @@ const lightTheme = createTheme({
     },
   },
   components: {
+    // JoyTypography: {
+    //   // defaultProps: {
+    //   //   levelMapping: {
+    //   //     display1: 'h1',
+    //   //     display2: 'h1',
+    //   //     h1: 'h2',
+    //   //     h2: 'h2',
+    //   //     h3: 'h3',
+    //   //     h4: 'h3',
+    //   //     h5: 'h3',
+    //   //     h6: 'h3',
+    //   //     body1: 'p',
+    //   //     bodyImpact: 'p',
+    //   //   },
+    //   // },
+    // },
+    MuiTypography: {
+      // defaultProps: {
+      //   levelMapping: {
+      //     display1: 'h1',
+      //     display2: 'h1',
+      //     h1: 'h2',
+      //     h2: 'h2',
+      //     h3: 'h3',
+      //     h4: 'h3',
+      //     h5: 'h3',
+      //     h6: 'h3',
+      //     body1: 'p',
+      //     bodyImpact: 'p',
+      //   }
+      // }
+    },
     MuiCssBaseline: {
       styleOverrides: {
         '*': {
@@ -181,9 +214,34 @@ lightTheme.typography.h1 = {
   fontFamily: TITLE_FONT,
   letterSpacing: '-0.15rem',
   fontWeight: 700,
+  marginBottom: lightTheme.spacing(2),
   [lightTheme.breakpoints.up('md')]: {
     fontSize: '10.3rem',
   },
 };
+
+// const theme = extendTheme({
+//   components: {
+//     JoyTypography: {
+//       defaultProps: {
+//         levelMapping: {
+//           display1: 'h1',
+//           display2: 'h1',
+//           h1: 'h2',
+//           h2: 'h2',
+//           h3: 'h3',
+//           h4: 'h3',
+//           h5: 'h3',
+//           h6: 'h3',
+//           body1: 'p',
+//           bodyImpact: 'p',
+//           body3: 'span',
+//           body4: 'span',
+//           body5: 'span',
+//         },
+//       },
+//     },
+//   },
+// });
 
 export default lightTheme
