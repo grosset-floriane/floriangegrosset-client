@@ -1,6 +1,7 @@
 # My personal website
 
 I am currently building the MVP (Minimum Viable Product) for my personal website. This code is at the moment self-standing
+
 ## Current state
 
 - Uses: React, typescript, Redux, Mui library, eslint
