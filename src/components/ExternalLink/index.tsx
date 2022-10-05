@@ -5,10 +5,7 @@ import { Link, styled } from '@mui/material'
 const StyledLink = styled(Link, {})({
     color: "black",
     fontWeight: 500,
-    '&:hover': {
-        textDecoration: 'underline',
-    },
-    '&:focus-visible': {
+    '&:hover, &:focus-visible, &:active': {
         outline: 'none',
         backgroundColor: 'black',
         color: 'white'
