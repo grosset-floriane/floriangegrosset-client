@@ -1,3 +1,3 @@
 export const toggleMenu = () => {
-    return {type: "TOGGLE_MENU"}
-} 
+	return {type: 'TOGGLE_MENU'}
+}

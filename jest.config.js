@@ -1,3 +1,3 @@
-module.exports = {
-  testEnvironment: 'jest-environment-jsdom',
+export default {
+	testEnvironment: 'jest-environment-jsdom',
 }

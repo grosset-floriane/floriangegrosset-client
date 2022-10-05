@@ -1,19 +1,19 @@
 {
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "target": "es5",
-    "baseUrl": "src",
-    "noEmit": true,
-    "allowJs": true,
-    "checkJs": false,
-    "moduleResolution": "node",
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "allowSyntheticDefaultImports": true,
-    "module": "ES6",
-    "lib": ["es6", "dom"],
-    "strictNullChecks": true
-  },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"target": "es5",
+		"baseUrl": "./src",
+		"noEmit": true,
+		"allowJs": true,
+		"checkJs": false,
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"noImplicitThis": true,
+		"allowSyntheticDefaultImports": true,
+		"module": "ES6",
+		"lib": ["es6", "dom"],
+		"strictNullChecks": true
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
 }
