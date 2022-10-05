@@ -31,6 +31,9 @@
     "start": "react-scripts start",
 		"lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
 		"check-types": "tsc",
+		"prettier": "prettier --ignore-path .gitignore \"**/*.+(js|jsx|json|ts|tsx)\"",
+		"format": "npm run prettier -- --write ",
+		"check-format": "npm run prettier -- --list-different",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -57,6 +60,8 @@
 		"@typescript-eslint/eslint-plugin": "^5.39.0",
 		"@typescript-eslint/parser": "^5.39.0",
 		"eslint": "^8.24.0",
+		"eslint-config-prettier": "^8.5.0",
+		"prettier": "2.7.1",
 		"typescript": "^4.8.4"
   }
 }
