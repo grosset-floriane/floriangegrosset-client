@@ -1,5 +1,6 @@
 import React from 'react'
-import {Typography, Link} from '@mui/material'
+import { Typography, Link } from '@mui/material'
+import ExternalLink from 'components/ExternalLink'
 
 const About = () => {
 	return (
@@ -17,18 +18,18 @@ const About = () => {
 
 			<Typography>
 				I am the founder of{' '}
-				<Link href="https://waawgallery.com" target="_blank">
+				<ExternalLink href="https://waawgallery.com">
 					WAAW, a non-profit online gallery
-				</Link>
+				</ExternalLink>
 				. We aim to promote and help the creation of quality web-based
 				artworks.
 			</Typography>
 			<Typography>
 				Since February 2022, I have been working as a frontend engineer
 				at{' '}
-				<Link href="https://getground.co.uk" target="_blank">
+				<ExternalLink href="https://getground.co.uk">
 					GetGround
-				</Link>
+				</ExternalLink>
 				.
 			</Typography>
 			<Typography>
