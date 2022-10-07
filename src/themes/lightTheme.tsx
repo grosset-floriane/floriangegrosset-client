@@ -218,7 +218,8 @@ lightTheme.typography.h1 = {
 	fontWeight: 700,
 	marginBottom: lightTheme.spacing(2),
 	[lightTheme.breakpoints.up('md')]: {
-		fontSize: '10.3rem',
+		fontSize: '5rem',
+		fontWeight: 400,
 	},
 }
 
