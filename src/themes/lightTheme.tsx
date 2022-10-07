@@ -1,4 +1,4 @@
-import {createTheme} from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles'
 
 const TITLE_FONT = "'Lekton', monospace"
 const BODY_FONT = "'Open Sans', sans-serif"
@@ -157,6 +157,9 @@ const lightTheme = createTheme({
 			styleOverrides: {
 				'*': {
 					scrollBehavior: 'smooth',
+					'&::selection': {
+						backgroundColor: '#A6BBF5',
+					}
 				},
 				body: {
 					backgroundColor: '#ECECEC',
@@ -180,7 +183,7 @@ const lightTheme = createTheme({
 		MuiListItemButton: {
 			variants: [
 				{
-					props: {variant: 'centered'},
+					props: { variant: 'centered' },
 					style: {
 						textAlign: 'center',
 					},
@@ -190,7 +193,7 @@ const lightTheme = createTheme({
 		MuiListItemIcon: {
 			variants: [
 				{
-					props: {variant: 'centered'},
+					props: { variant: 'centered' },
 					style: {
 						margin: 'auto',
 						display: 'flex',
@@ -210,13 +213,13 @@ const lightTheme = createTheme({
 })
 
 lightTheme.typography.h1 = {
-	fontSize: '3.6rem',
 	fontFamily: TITLE_FONT,
 	letterSpacing: '-0.15rem',
 	fontWeight: 700,
 	marginBottom: lightTheme.spacing(2),
 	[lightTheme.breakpoints.up('md')]: {
-		fontSize: '10.3rem',
+		fontSize: '5rem',
+		fontWeight: 400,
 	},
 }
 
