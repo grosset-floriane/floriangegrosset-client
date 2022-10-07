@@ -1,16 +1,15 @@
 import React from 'react'
 import { Link, styled } from '@mui/material'
 
-// Replace colors by theme colors
-const StyledLink = styled(Link, {})({
-    color: "black",
+
+const StyledLink = styled(Link, {})(({ theme }) => ({
+    color: theme.palette.text.primary,
     fontWeight: 500,
     '&:hover, &:focus-visible, &:active': {
         outline: 'none',
-        backgroundColor: 'black',
-        color: 'white'
+        backgroundColor: theme.palette.primary.main,
     }
-})
+}))
 
 interface Props {
     href: string
