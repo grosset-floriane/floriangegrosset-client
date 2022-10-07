@@ -157,6 +157,9 @@ const lightTheme = createTheme({
 			styleOverrides: {
 				'*': {
 					scrollBehavior: 'smooth',
+					'&::selection': {
+						backgroundColor: '#A6BBF5',
+					}
 				},
 				body: {
 					backgroundColor: '#ECECEC',
