@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, styled } from '@mui/material'
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 
 const StyledLink = styled(Link, {})(({ theme }) => ({
@@ -21,7 +22,7 @@ const ExternalLink = ({ href, children }: Props) => {
     return (
         <StyledLink href={href} target="_BLANK">
             {children}
-            {/* Add external icon here */}
+            <OpenInNewIcon aria-label="open in a new tab" sx={{ fontSize: 23, position: 'relative', top: 4, paddingLeft: '3px', display: 'inline-block' }} />
         </StyledLink>
     )
 }
