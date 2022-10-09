@@ -1,4 +1,4 @@
-import {makeStyles} from '@mui/styles'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(theme => ({
 	container: {
@@ -14,6 +14,7 @@ const useStyles = makeStyles(theme => ({
 		flexDirection: 'column',
 		justifyContent: 'center',
 		flexGrow: 1,
+		zIndex: 99999,
 	},
 	nav: {
 		overflowY: 'auto',
@@ -24,8 +25,17 @@ const useStyles = makeStyles(theme => ({
 			marginBottom: 8,
 		},
 	},
-	buttonRipple: {
-		color: '#fff',
+	link: {
+		'&:hover, &:focus-visible': {
+			backgroundColor: 'transparent !important',
+			'& > div > span, & > div > svg': {
+				backgroundColor: theme.palette.background.default,
+				// color: 'black',
+				[theme.breakpoints.up('lg')]: {
+					backgroundColor: theme.palette.primary.main,
+				}
+			},
+		}
 	},
 }))
 
