@@ -27,7 +27,7 @@ const LayoutColumn: FC<LayoutColumnProps> = ({ children, stickyTopPosition = 45,
 
     return (
         <>
-            <Grid xs={12} lg={isSticky ? 5 : 7} mt={isDesktop ? marginTop : 0}>
+            <Grid item xs={12} lg={isSticky ? 5 : 7} mt={isDesktop ? marginTop : 0}>
                 {columnContent}
             </Grid>
         </>

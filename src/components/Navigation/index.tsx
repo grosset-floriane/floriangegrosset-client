@@ -1,8 +1,9 @@
 import React from 'react'
 import List from '@mui/material/List'
 import NavItem from './NavItem'
-import {Box} from '@mui/material'
+import { Box } from '@mui/material'
 import CloseButton from './CloseButton'
+import { navigationLinks } from './navigationLinks'
 
 import useStyles from './Navigation.styles'
 
@@ -13,8 +14,7 @@ function Navigation() {
 		<Box className={classes.container}>
 			<nav className={classes.nav}>
 				<List>
-					<NavItem to="/" text="About" />
-					<NavItem to="/contact" text="Contact" />
+					{navigationLinks.map(({ to, label }) => (<NavItem to={to} text={label} />))}
 					<CloseButton />
 				</List>
 			</nav>

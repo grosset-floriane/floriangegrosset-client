@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import MuiLink from '@mui/material/Link'
-import MenuButton from '../../features/menu/MenuButton'
+import MenuButton from '../Navigation/MenuButton'
 import {
 	Link as RouterLink,
 	LinkProps as RouterLinkProps,
@@ -12,9 +12,11 @@ import {
 import useStyles from './TopAppBar.styles'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Slide from '@mui/material/Slide'
-import {useTypedSelector} from 'redux/typedSelector'
-
+import NavItem from 'components/Navigation/NavItem'
+import { useTypedSelector } from 'redux/typedSelector'
+import useMediaQuery from 'hooks/useMediaQuery'
 import Logo from './Logo'
+import { navigationLinks } from 'components/Navigation/navigationLinks'
 
 interface Props {
 	/* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -22,7 +24,7 @@ interface Props {
 	isOpen: boolean
 }
 
-function HideOnScroll({children, isOpen}: Props) {
+function HideOnScroll({ children, isOpen }: Props) {
 	const trigger = useScrollTrigger()
 
 	return (
@@ -33,8 +35,9 @@ function HideOnScroll({children, isOpen}: Props) {
 }
 
 function TopAppBar() {
-	const classes = useStyles()
-	const {isOpen} = useTypedSelector(state => state.menu)
+	const { isOpen } = useTypedSelector(state => state.menu)
+	const classes = useStyles({ isOpen })
+	const { isDesktop } = useMediaQuery()
 
 	const to = '/'
 	const renderLink = React.useMemo(
@@ -57,12 +60,13 @@ function TopAppBar() {
 
 	return (
 		<HideOnScroll isOpen={isOpen}>
-			<Box sx={{flexGrow: 1}}>
+			<Box sx={{ flexGrow: 1 }}>
 				<AppBar
 					position="fixed"
 					color={isOpen ? 'primary' : 'background'}
+					sx={{ zIndex: 999999 }}
 				>
-					<Toolbar variant="dense" sx={{pb: '7px'}}>
+					<Toolbar variant="dense" className={classes.toolbar}>
 						<MuiLink
 							color="inherit"
 							component={renderLink}
@@ -73,13 +77,14 @@ function TopAppBar() {
 								variant="h6"
 								color="inherit"
 								component="div"
-								sx={{ml: 2, position: 'relative', top: 0}}
+								sx={{ ml: 2, position: 'relative', top: 0 }}
 							>
 								Florian(e) <br /> — Grosset
 							</Typography>
 						</MuiLink>
+						{isDesktop ? (<nav className={classes.nav}>
+							{navigationLinks.map(({ to, label }) => (<NavItem to={to} text={label} />))}</nav>) : <MenuButton />}
 
-						<MenuButton />
 					</Toolbar>
 				</AppBar>
 			</Box>
