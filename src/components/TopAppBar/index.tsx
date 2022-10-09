@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import MuiLink from '@mui/material/Link'
-import MenuButton from '../../features/menu/MenuButton'
+import MenuButton from '../Navigation/MenuButton'
 import {
 	Link as RouterLink,
 	LinkProps as RouterLinkProps,

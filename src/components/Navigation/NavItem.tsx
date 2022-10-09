@@ -6,8 +6,8 @@ import {NavLink, LinkProps as RouterLinkProps} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Typography} from '@mui/material/'
 import useStyles from './Navigation.styles'
-import {useDispatch} from 'react-redux'
-import {toggleMenu} from 'features/menu/menuActions'
+import { useDispatch } from 'react-redux'
+import { closeMenu } from 'state/slices/menu.slice'
 
 interface Props {
 	to: string
