@@ -30,7 +30,6 @@ const useStyles = makeStyles(theme => ({
 			backgroundColor: 'transparent !important',
 			'& > div > span, & > div > svg': {
 				backgroundColor: theme.palette.background.default,
-				// color: 'black',
 				[theme.breakpoints.up('lg')]: {
 					backgroundColor: theme.palette.primary.main,
 				}
