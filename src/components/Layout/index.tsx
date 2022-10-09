@@ -4,7 +4,6 @@ import { styled, Grid, GridProps } from '@mui/material'
 const StyledLayout = styled(Grid, {})<GridProps>(({ theme }) => ({
     padding: theme.spacing(2),
     marginTop: theme.spacing(9),
-    marginLeft: 0,
     [theme.breakpoints.up('sm')]: {
         padding: theme.spacing(5),
         maxWidth: 678,
