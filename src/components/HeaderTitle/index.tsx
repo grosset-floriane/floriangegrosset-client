@@ -22,7 +22,7 @@ const HeaderTitle = ({ isOneLine = false }: { isOneLine?: boolean }) => {
                 variant="h6"
                 color="inherit"
                 component="p"
-                sx={{ ml: isOneLine ? 1 : 2, position: 'relative', top: isOneLine ? 0 : -2, textTransform: isOneLine ? 'uppercase' : 'initial' }}
+                sx={{ ml: isOneLine ? 1 : 2, position: 'relative', top: isOneLine ? 0 : -2, textTransform: isOneLine ? 'uppercase' : 'initial', lineHeight: 1.1 }}
             >
                 Florian(e) {!isOneLine && <><br /> — </>}Grosset
 							</Typography>

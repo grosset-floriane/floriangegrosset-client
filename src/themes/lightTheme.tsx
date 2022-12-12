@@ -76,7 +76,7 @@ const lightTheme = createTheme({
 		bodyImpact: {
 			fontFamily: TITLE_FONT,
 			fontWeight: 700,
-			letterSpacing: '.15rem',
+			letterSpacing: '.1rem',
 			fontSize: 24,
 			marginBottom: 32,
 		},
