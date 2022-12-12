@@ -17,6 +17,7 @@ import { useTypedSelector } from 'redux/typedSelector'
 import useMediaQuery from 'hooks/useMediaQuery'
 import Logo from './Logo'
 import { navigationLinks } from 'components/Navigation/navigationLinks'
+import HeaderTitle from 'components/HeaderTitle'
 
 interface Props {
 	/* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -72,7 +73,7 @@ function TopAppBar() {
 							component={renderLink}
 							className={classes.homeLink}
 						>
-							<Logo />
+							{/* <Logo />
 							<Typography
 								variant="h6"
 								color="inherit"
@@ -80,7 +81,8 @@ function TopAppBar() {
 								sx={{ ml: 2, position: 'relative', top: 0 }}
 							>
 								Florian(e) <br /> — Grosset
-							</Typography>
+							</Typography> */}
+							<HeaderTitle />
 						</MuiLink>
 						{isDesktop ? (<nav className={classes.nav}>
 							{navigationLinks.map(({ to, label }) => (<NavItem to={to} text={label} />))}</nav>) : <MenuButton />}

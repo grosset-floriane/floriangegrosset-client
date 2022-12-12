@@ -1,6 +1,6 @@
 import React from 'react'
 import Box from '@mui/material/Box'
-import {createStyles, makeStyles} from '@mui/styles'
+import { createStyles, makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles(() =>
 	createStyles({
@@ -10,10 +10,10 @@ const useStyles = makeStyles(() =>
 	}),
 )
 
-function Logo() {
+function Logo({ width = 40 }: { width?: number }) {
 	const classes = useStyles()
 	return (
-		<Box sx={{width: 40}}>
+		<Box sx={{ width }}>
 			<img
 				className={classes.images}
 				alt="Floriane Grosset's logo"

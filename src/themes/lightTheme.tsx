@@ -206,6 +206,7 @@ const lightTheme = createTheme({
 			styleOverrides: {
 				root: {
 					textDecoration: 'none',
+					color: 'rgba(0, 0, 0, 0.87)'
 				},
 			},
 		},

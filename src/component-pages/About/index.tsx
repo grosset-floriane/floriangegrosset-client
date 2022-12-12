@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography, useMediaQuery, useTheme } from '@mui/material'
-import ExternalLink from 'components/ExternalLink'
+import Link from 'components/Link'
 import Layout from 'components/Layout'
 import LayoutColumn from 'components/Layout/LayoutColumn'
 
@@ -25,18 +25,18 @@ const About = () => {
 
 				<Typography mb={3}>
 					I am the founder of{' '}
-					<ExternalLink href="https://waawgallery.com">
+					<Link href="https://waawgallery.com" isExternal>
 						WAAW, a non-profit online gallery
-		 		</ExternalLink>
+		 		</Link>
 		 		. We aim to promote and help the creation of quality web-based
 		 		artworks.
 		 	</Typography>
 				<Typography mb={3}>
 					Since February 2022, I have been working as a frontend engineer
 		 		at{' '}
-					<ExternalLink href="https://getground.co.uk">
+					<Link href="https://getground.co.uk" isExternal>
 						GetGround
-		 		</ExternalLink>
+		 		</Link>
 		 		.
 		 	</Typography>
 				<Typography mb={3}>
