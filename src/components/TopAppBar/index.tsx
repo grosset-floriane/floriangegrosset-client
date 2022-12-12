@@ -4,72 +4,94 @@ import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import MuiLink from '@mui/material/Link'
-import MenuButton from '../../features/menu/MenuButton'
-import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
+import MenuButton from '../Navigation/MenuButton'
+import {
+	Link as RouterLink,
+	LinkProps as RouterLinkProps,
+} from 'react-router-dom'
 import useStyles from './TopAppBar.styles'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Slide from '@mui/material/Slide'
-import {useTypedSelector} from 'redux/typedSelector'
-
+import NavItem from 'components/Navigation/NavItem'
+import { useTypedSelector } from 'redux/typedSelector'
+import useMediaQuery from 'hooks/useMediaQuery'
 import Logo from './Logo'
+import { navigationLinks } from 'components/Navigation/navigationLinks'
+import HeaderTitle from 'components/HeaderTitle'
 
 interface Props {
-  children: React.ReactNode
-  isOpen: boolean
+	/* eslint-disable  @typescript-eslint/no-explicit-any */
+	children: React.ReactElement<any, any>
+	isOpen: boolean
 }
 
- // @ts-ignore
-function HideOnScroll({ children, isOpen }) {
-  const trigger = useScrollTrigger()
+function HideOnScroll({ children, isOpen }: Props) {
+	const trigger = useScrollTrigger()
 
- 
-  return (
-    <Slide appear={false} direction="down" in={isOpen ? true : !trigger}>
-      {children}
-    </Slide>
-  )
+	return (
+		<Slide appear={false} direction="down" in={isOpen ? true : !trigger}>
+			{children}
+		</Slide>
+	)
 }
 
 function TopAppBar() {
-  const classes = useStyles()
-  const { isOpen } = useTypedSelector((state) => state.menu)
+	const { isOpen } = useTypedSelector(state => state.menu)
+	const classes = useStyles({ isOpen })
+	const { isDesktop } = useMediaQuery()
 
-  const to = '/'
-  const renderLink = React.useMemo(
-    () =>
-      React.forwardRef<any, Omit<RouterLinkProps, 'to'>>((itemProps, ref) => {
-        return <RouterLink to={to} ref={ref} {...itemProps} role={undefined} />
-      }),
-    [to],
-  )
+	const to = '/'
+	const renderLink = React.useMemo(
+		() =>
+			/* eslint-disable  @typescript-eslint/no-explicit-any */
+			React.forwardRef<any, Omit<RouterLinkProps, 'to'>>(
+				(itemProps, ref) => {
+					return (
+						<RouterLink
+							to={to}
+							ref={ref}
+							{...itemProps}
+							role={undefined}
+						/>
+					)
+				},
+			),
+		[to],
+	)
 
-  return (
-    <HideOnScroll isOpen={isOpen}>
-      <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="fixed" color={isOpen ? 'primary' : 'background'}>
-          <Toolbar variant="dense" sx={{ pb: '7px' }}>
-            <MuiLink
-              color="inherit"
-              component={renderLink}
-              className={classes.homeLink}
-            >
-              <Logo />
-              <Typography
-                variant="h6"
-                color="inherit"
-                component="div"
-                sx={{ ml: 2, position: 'relative', top: 0 }}
-              >
-                Florian(e) <br /> — Grosset
-              </Typography>
-            </MuiLink>
+	return (
+		<HideOnScroll isOpen={isOpen}>
+			<Box sx={{ flexGrow: 1 }}>
+				<AppBar
+					position="fixed"
+					color={isOpen ? 'primary' : 'background'}
+					sx={{ zIndex: 999999 }}
+				>
+					<Toolbar variant="dense" className={classes.toolbar}>
+						<MuiLink
+							color="inherit"
+							component={renderLink}
+							className={classes.homeLink}
+						>
+							{/* <Logo />
+							<Typography
+								variant="h6"
+								color="inherit"
+								component="div"
+								sx={{ ml: 2, position: 'relative', top: 0 }}
+							>
+								Florian(e) <br /> — Grosset
+							</Typography> */}
+							<HeaderTitle />
+						</MuiLink>
+						{isDesktop ? (<nav className={classes.nav}>
+							{navigationLinks.map(({ to, label }) => (<NavItem to={to} text={label} />))}</nav>) : <MenuButton />}
 
-            <MenuButton />
-          </Toolbar>
-        </AppBar>
-      </Box>
-    </HideOnScroll>
-  )
+					</Toolbar>
+				</AppBar>
+			</Box>
+		</HideOnScroll>
+	)
 }
 
 export default TopAppBar
