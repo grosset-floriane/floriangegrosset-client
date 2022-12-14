@@ -1,5 +1,4 @@
 import React, { FC } from 'react'
-import { styled, Grid } from '@mui/material'
 import Footer from 'components/Footer'
 import { StyledLayout } from './Layout.styles'
 
