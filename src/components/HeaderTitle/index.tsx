@@ -4,15 +4,11 @@ import Logo from 'components/TopAppBar/Logo'
 
 const StyledWrapper = styled(Box, {
     shouldForwardProp: (prop) => prop !== "isFooter"
-})<BoxProps & { isFooter: boolean }>(({ theme, isFooter }) => ({
+})<BoxProps & { isFooter: boolean }>(({ isFooter }) => ({
     display: isFooter ? 'flex' : 'block',
     alignItems: 'center'
 
 }))
-
-const StyledTypography = styled(Typography)(({ theme }) => ({
-
-})) as typeof Typography
 
 const HeaderTitle = ({ isOneLine = false }: { isOneLine?: boolean }) => {
     return (

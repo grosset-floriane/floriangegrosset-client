@@ -2,7 +2,6 @@ import * as React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
 import MuiLink from '@mui/material/Link'
 import MenuButton from '../Navigation/MenuButton'
 import {
@@ -15,7 +14,6 @@ import Slide from '@mui/material/Slide'
 import NavItem from 'components/Navigation/NavItem'
 import { useTypedSelector } from 'redux/typedSelector'
 import useMediaQuery from 'hooks/useMediaQuery'
-import Logo from './Logo'
 import { navigationLinks } from 'components/Navigation/navigationLinks'
 import HeaderTitle from 'components/HeaderTitle'
 
@@ -73,15 +71,6 @@ function TopAppBar() {
 							component={renderLink}
 							className={classes.homeLink}
 						>
-							{/* <Logo />
-							<Typography
-								variant="h6"
-								color="inherit"
-								component="div"
-								sx={{ ml: 2, position: 'relative', top: 0 }}
-							>
-								Florian(e) <br /> — Grosset
-							</Typography> */}
 							<HeaderTitle />
 						</MuiLink>
 						{isDesktop ? (<nav className={classes.nav}>

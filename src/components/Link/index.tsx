@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link as MuiLink, styled } from '@mui/material'
+import { Link as MuiLink } from '@mui/material'
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { makeStyles } from '@mui/styles'
 
@@ -19,16 +19,6 @@ const useStyles = makeStyles(theme => ({
         top: 4,
         paddingLeft: '3px',
         display: 'inline-block'
-    }
-}))
-
-
-const StyledLink = styled(MuiLink, {})(({ theme }) => ({
-    color: theme.palette.text.primary,
-    fontWeight: 500,
-    '&:hover, &:focus-visible, &:active': {
-        outline: 'none',
-        backgroundColor: theme.palette.primary.main,
     }
 }))
 
