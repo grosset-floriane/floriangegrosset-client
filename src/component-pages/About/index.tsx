@@ -1,21 +1,19 @@
 import React from 'react'
-import { Typography, useMediaQuery, useTheme } from '@mui/material'
+import { Typography } from '@mui/material'
 import Link from 'components/Link'
 import Layout from 'components/Layout'
 import LayoutColumn from 'components/Layout/LayoutColumn'
+import H1 from 'components/H1/H1'
 
 const About = () => {
-	const theme = useTheme()
-	const isTablet = useMediaQuery(theme.breakpoints.up('sm'))
+	const tagline = "I’m Flo and I am a web dev, passionate about accessibility, sustainability, and art"
+	
 	return (
 		<Layout>
 			<LayoutColumn isSticky stickyTopPosition={70}>
-				<Typography variant="h1" lang="fr" mb={3} mt={2} textAlign={isTablet ? "left" : "center"}>
-					Bonjour !
-		 	</Typography>
+				<H1 lang="fr" title="About" description={tagline}>Bonjour !</H1>
 				<Typography variant="bodyImpact" component="p" mb={6}>
-					I’m Flo and I am a web dev, passionate about
-					accessibility, sustainability, and art
+					{tagline}
 		 	</Typography>
 			</LayoutColumn>
 			<LayoutColumn marginTop={40}>
