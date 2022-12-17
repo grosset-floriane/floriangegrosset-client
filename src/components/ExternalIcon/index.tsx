@@ -3,7 +3,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import { makeStyles } from '@mui/styles'
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
     externalIcon: {
         fontSize: 23,
         position: 'relative',
