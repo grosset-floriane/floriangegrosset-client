@@ -8,7 +8,11 @@ import useMediaQuery from 'hooks/useMediaQuery'
 const StyledFooter = styled(Container)(({ theme }) => ({
     maxWidth: '100% !important',
     backgroundColor: theme.palette.primary.main,
-    padding: '0'
+    padding: 0,
+    marginTop: 'auto',
+    '& > div': {
+        marginTop: '0 !important'
+    }
 })) as typeof Container
 
 const Footer = () => {
