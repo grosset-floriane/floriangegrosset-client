@@ -26,8 +26,10 @@ const useStyles = makeStyles(theme => ({
 		},
 	},
 	link: {
+		textDecoration: ({isActive}: {isActive?: boolean}) => isActive ? 'underline' : 'none',
 		'&:hover, &:focus-visible': {
 			backgroundColor: 'transparent !important',
+			textDecoration: ({isActive}: {isActive?: boolean}) => isActive ? 'underline' : 'none',
 			'& > div > span, & > div > svg': {
 				backgroundColor: theme.palette.background.default,
 				[theme.breakpoints.up('lg')]: {

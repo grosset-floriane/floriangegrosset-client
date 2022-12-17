@@ -13,10 +13,11 @@ import useMediaQuery from 'hooks/useMediaQuery'
 interface Props {
 	to: string
 	text: string
+	isActive: boolean
 }
 
-function NavItem({ to, text }: Props) {
-	const classes = useStyles()
+function NavItem({ to, text, isActive }: Props) {
+	const classes = useStyles({isActive})
 	const dispatch = useDispatch()
 	const { isDesktop } = useMediaQuery()
 

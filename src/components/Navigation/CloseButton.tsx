@@ -7,7 +7,7 @@ import { closeMenu } from 'state/slices/menu.slice'
 
 function CloseButton() {
 	const dispatch = useDispatch()
-	const classes = useStyles()
+	const classes = useStyles({})
 
 	return (
 		<ListItem disablePadding className={classes.listItem}>
