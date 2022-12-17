@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link as MuiLink } from '@mui/material'
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { makeStyles } from '@mui/styles'
+import ExternalIcon from 'components/ExternalIcon';
 
 type BackgroundColor = 'default' | 'primary'
 
@@ -13,13 +13,6 @@ const useStyles = makeStyles(theme => ({
             backgroundColor: ({ backgroundColor }: { backgroundColor: BackgroundColor }) => backgroundColor === 'primary' ? theme.palette.background.default : theme.palette.primary.main,
         }
     },
-    externalIcon: {
-        fontSize: 23,
-        position: 'relative',
-        top: 4,
-        paddingLeft: '3px',
-        display: 'inline-block'
-    }
 }))
 
 interface Props {
@@ -35,7 +28,7 @@ const Link = ({ href, children, isExternal = false, backgroundColor = 'default' 
     return (
         <MuiLink href={href} target={isExternal ? "_BLANK" : ""} className={classes.link}>
             {children}
-            {isExternal && <OpenInNewIcon aria-label="open in a new tab" className={classes.externalIcon} />}
+            {isExternal && <ExternalIcon />}
         </MuiLink>
     )
 }
