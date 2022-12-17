@@ -16,6 +16,7 @@ import { useTypedSelector } from 'redux/typedSelector'
 import useMediaQuery from 'hooks/useMediaQuery'
 import { navigationLinks } from 'components/Navigation/navigationLinks'
 import HeaderTitle from 'components/HeaderTitle'
+import { useLocation } from 'react-router-dom'
 
 interface Props {
 	/* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -37,6 +38,7 @@ function TopAppBar() {
 	const { isOpen } = useTypedSelector(state => state.menu)
 	const classes = useStyles({ isOpen })
 	const { isDesktop } = useMediaQuery()
+	const { pathname } = useLocation()
 
 	const to = '/'
 	const renderLink = React.useMemo(
@@ -74,7 +76,7 @@ function TopAppBar() {
 							<HeaderTitle />
 						</MuiLink>
 						{isDesktop ? (<nav className={classes.nav}>
-							{navigationLinks.map(({ to, label }) => (<NavItem to={to} text={label} />))}</nav>) : <MenuButton />}
+							{navigationLinks.map(({ to, label }) => (<NavItem to={to} text={label} isActive={to === pathname} />))}</nav>) : <MenuButton />}
 
 					</Toolbar>
 				</AppBar>
