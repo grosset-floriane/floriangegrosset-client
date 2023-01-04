@@ -1,6 +1,7 @@
 import React from 'react'
 import {Helmet} from 'react-helmet'
-import {Typography, useMediaQuery, useTheme} from '@mui/material'
+import {Typography} from '@mui/material'
+import useMediaQuery from 'hooks/useMediaQuery'
 import {useLocation} from 'react-router-dom'
 
 const H1 = ({
@@ -14,8 +15,7 @@ const H1 = ({
 	children: string
 	lang?: string
 }) => {
-	const theme = useTheme()
-	const isTablet = useMediaQuery(theme.breakpoints.up('sm'))
+	const {isTablet} = useMediaQuery()
 	const {pathname} = useLocation()
 
 	return (
