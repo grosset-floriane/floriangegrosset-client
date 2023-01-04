@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
-import { Box, useMediaQuery, useTheme, Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
+import useMediaQuery from 'hooks/useMediaQuery'
 
 interface StickyElementProps {
     stickyTopPosition: number
@@ -21,8 +22,7 @@ interface LayoutColumnProps {
 }
 
 const LayoutColumn: FC<LayoutColumnProps> = ({ children, stickyTopPosition = 45, isSticky = false, marginTop = 0 }) => {
-    const theme = useTheme()
-    const isDesktop = useMediaQuery(theme.breakpoints.up('lg'))
+    const {isDesktop} = useMediaQuery()
     const columnContent = isSticky ? <StickyElement stickyTopPosition={stickyTopPosition} isDesktop={isDesktop}>{children}</StickyElement> : children
 
     return (
