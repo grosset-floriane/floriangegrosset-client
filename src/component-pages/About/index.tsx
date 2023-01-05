@@ -12,7 +12,7 @@ const About = () => {
 		<Layout>
 			<LayoutColumn isSticky stickyTopPosition={70}>
 				<H1 lang="fr" title="About" description={tagline}>Bonjour !</H1>
-				<Typography variant="bodyImpact" component="p" mb={6}>
+				<Typography variant="bodyImpact" mb={6}>
 					{tagline}
 		 	</Typography>
 			</LayoutColumn>

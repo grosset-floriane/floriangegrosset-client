@@ -23,7 +23,7 @@ const Contact = () => {
 		<Layout>
 			<LayoutColumn marginTop={0}>
 				<H1 description="Floriane's contact information">Contact</H1>
-				<Typography variant="bodyImpact" component="p">
+				<Typography variant="bodyImpact">
 					The easiest way to contact me is by email. Don’t hesitate to
 					drop me a line to say hi!
 					<br />
