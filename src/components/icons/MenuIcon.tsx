@@ -1,7 +1,8 @@
 import { SvgIcon, SvgIconTypeMap } from '@mui/material'
 
 const MenuIcon = (
-	props: SvgIconTypeMap | { style: { [key: string]: string | number } },
+	// fix typescript types
+	props: SvgIconTypeMap | { sx: { [key: string]: string | number | {[key: string]: string | number} } },
 ) => {
 	return (
 		<SvgIcon viewBox="0 0 24 24" {...props}>

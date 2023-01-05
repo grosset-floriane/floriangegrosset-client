@@ -27,9 +27,6 @@ function MenuButton() {
 				>
 
 					<MenuIcon
-						// @todo: solve ts issue
-						// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-						// @ts-ignore
 						sx={{ fontSize: 34, '&:hover': { bgcolor: 'primary.main' } }} />
 				</IconButton>
 			)}
