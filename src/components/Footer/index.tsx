@@ -4,6 +4,7 @@ import { StyledLayout } from 'components/Layout/Layout.styles'
 import HeaderTitle from 'components/HeaderTitle'
 import Link from 'components/Link'
 import useMediaQuery from 'hooks/useMediaQuery'
+import { EMAIL } from 'utils/constants'
 
 const StyledFooter = styled(Container)(({ theme }) => ({
     maxWidth: '100% !important',
@@ -24,7 +25,7 @@ const Footer = () => {
                 <Grid item xs={12} sm={8} lg={6} sx={{ pt: isMobile ? 5 : 0, pb: isMobile ? 5 : 0 }}>
                     <HeaderTitle isOneLine />
                     <Typography variant="body2">I am web developer passionate about accessibility, sustainability and art.<br />
-                        <Link href="mailto:contact@florianegrosset.com" isExternal backgroundColor="primary">contact@florianegrosset.com</Link>
+                        <Link href={`mailto:${EMAIL}`} isExternal backgroundColor="primary">{EMAIL}</Link>
                     </Typography>
                 </Grid>
 

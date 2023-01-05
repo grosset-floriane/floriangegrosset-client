@@ -6,6 +6,7 @@ import Link from 'components/Link'
 import H1 from 'components/H1/H1'
 import Button from 'components/Button'
 import {Box} from '@mui/system'
+import { EMAIL } from 'utils/constants'
 
 const SOCIAL_MEDIA = [
 	{
@@ -27,8 +28,8 @@ const Contact = () => {
 					The easiest way to contact me is by email. Don’t hesitate to
 					drop me a line to say hi!
 					<br />
-					<Link href="mailto:contact@florianegrosset.com">
-						contact@florianegrosset.com
+					<Link href={`mailto:${EMAIL}`}>
+						{EMAIL}
 					</Link>
 				</Typography>
 
