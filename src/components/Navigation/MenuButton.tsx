@@ -15,7 +15,9 @@ const MenuButton = () => {
 				<IconButton
 					edge="end"
 					color="inherit"
-					aria-label="menu"
+					aria-label="open menu"
+					aria-expanded="false"
+					aria-controls="menu"
 					sx={{
 						ml: 'auto',
 						borderRadius: 0,

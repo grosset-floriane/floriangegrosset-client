@@ -1,10 +1,10 @@
 import React from 'react'
 import List from '@mui/material/List'
 import NavItem from './NavItem'
-import { Box } from '@mui/material'
+import {Box} from '@mui/material'
 import CloseButton from './CloseButton'
-import { navigationLinks } from './navigationLinks'
-import { useLocation } from 'react-router'
+import {navigationLinks} from './navigationLinks'
+import {useLocation} from 'react-router'
 
 import useStyles from './Navigation.styles'
 
@@ -13,10 +13,16 @@ const Navigation = () => {
 	const {pathname} = useLocation()
 
 	return (
-		<Box className={classes.container}>
+		<Box className={classes.container} id="menu">
 			<nav className={classes.nav}>
 				<List>
-					{navigationLinks.map(({ to, label }) => (<NavItem to={to} text={label} isActive={to === pathname} />))}
+					{navigationLinks.map(({to, label}) => (
+						<NavItem
+							to={to}
+							text={label}
+							isActive={to === pathname}
+						/>
+					))}
 					<CloseButton />
 				</List>
 			</nav>
