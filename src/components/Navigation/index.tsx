@@ -8,7 +8,7 @@ import { useLocation } from 'react-router'
 
 import useStyles from './Navigation.styles'
 
-function Navigation() {
+const Navigation = () => {
 	const classes = useStyles({})
 	const {pathname} = useLocation()
 

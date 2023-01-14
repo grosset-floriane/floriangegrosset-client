@@ -1,4 +1,4 @@
-import { createTheme } from '@mui/material/styles'
+import {createTheme} from '@mui/material/styles'
 
 const TITLE_FONT = "'Lekton', monospace"
 const BODY_FONT = "'Open Sans', sans-serif"
@@ -121,37 +121,20 @@ const lightTheme = createTheme({
 		},
 	},
 	components: {
-		// JoyTypography: {
-		//   // defaultProps: {
-		//   //   levelMapping: {
-		//   //     display1: 'h1',
-		//   //     display2: 'h1',
-		//   //     h1: 'h2',
-		//   //     h2: 'h2',
-		//   //     h3: 'h3',
-		//   //     h4: 'h3',
-		//   //     h5: 'h3',
-		//   //     h6: 'h3',
-		//   //     body1: 'p',
-		//   //     bodyImpact: 'p',
-		//   //   },
-		//   // },
-		// },
 		MuiTypography: {
-			// defaultProps: {
-			//   levelMapping: {
-			//     display1: 'h1',
-			//     display2: 'h1',
-			//     h1: 'h2',
-			//     h2: 'h2',
-			//     h3: 'h3',
-			//     h4: 'h3',
-			//     h5: 'h3',
-			//     h6: 'h3',
-			//     body1: 'p',
-			//     bodyImpact: 'p',
-			//   }
-			// }
+			defaultProps: {
+				variantMapping: {
+					h1: 'h1',
+					h2: 'h2',
+					h3: 'h3',
+					h4: 'h4',
+					h5: 'h5',
+					h6: 'h6',
+					body1: 'p',
+					body2: 'p',
+					bodyImpact: 'p',
+				},
+			},
 		},
 		MuiCssBaseline: {
 			styleOverrides: {
@@ -159,7 +142,7 @@ const lightTheme = createTheme({
 					scrollBehavior: 'smooth',
 					'&::selection': {
 						backgroundColor: '#A6BBF5',
-					}
+					},
 				},
 				body: {
 					backgroundColor: '#ECECEC',
@@ -183,7 +166,7 @@ const lightTheme = createTheme({
 		MuiListItemButton: {
 			variants: [
 				{
-					props: { variant: 'centered' },
+					props: {variant: 'centered'},
 					style: {
 						textAlign: 'center',
 					},
@@ -193,7 +176,7 @@ const lightTheme = createTheme({
 		MuiListItemIcon: {
 			variants: [
 				{
-					props: { variant: 'centered' },
+					props: {variant: 'centered'},
 					style: {
 						margin: 'auto',
 						display: 'flex',
@@ -206,7 +189,7 @@ const lightTheme = createTheme({
 			styleOverrides: {
 				root: {
 					textDecoration: 'none',
-					color: 'rgba(0, 0, 0, 0.87)'
+					color: 'rgba(0, 0, 0, 0.87)',
 				},
 			},
 		},
@@ -223,29 +206,5 @@ lightTheme.typography.h1 = {
 		fontWeight: 400,
 	},
 }
-
-// const theme = extendTheme({
-//   components: {
-//     JoyTypography: {
-//       defaultProps: {
-//         levelMapping: {
-//           display1: 'h1',
-//           display2: 'h1',
-//           h1: 'h2',
-//           h2: 'h2',
-//           h3: 'h3',
-//           h4: 'h3',
-//           h5: 'h3',
-//           h6: 'h3',
-//           body1: 'p',
-//           bodyImpact: 'p',
-//           body3: 'span',
-//           body4: 'span',
-//           body5: 'span',
-//         },
-//       },
-//     },
-//   },
-// });
 
 export default lightTheme

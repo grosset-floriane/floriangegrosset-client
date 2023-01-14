@@ -24,7 +24,7 @@ interface Props {
 	isOpen: boolean
 }
 
-function HideOnScroll({ children, isOpen }: Props) {
+const HideOnScroll = ({ children, isOpen }: Props) => {
 	const trigger = useScrollTrigger()
 
 	return (
@@ -34,7 +34,7 @@ function HideOnScroll({ children, isOpen }: Props) {
 	)
 }
 
-function TopAppBar() {
+const TopAppBar = () => {
 	const { isOpen } = useTypedSelector(state => state.menu)
 	const classes = useStyles({ isOpen })
 	const { isDesktop } = useMediaQuery()
