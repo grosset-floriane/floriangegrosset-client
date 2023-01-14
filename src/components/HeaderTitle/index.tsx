@@ -20,7 +20,7 @@ const HeaderTitle = ({ isOneLine = false }: { isOneLine?: boolean }) => {
                 component="p"
                 sx={{ ml: isOneLine ? 1 : 2, position: 'relative', top: isOneLine ? 0 : -2, textTransform: isOneLine ? 'uppercase' : 'initial', lineHeight: 1.1 }}
             >
-                Florian(e) {!isOneLine && <><br /> — </>}Grosset
+                <span aria-label="Floriane Grosset">Florian(e) {!isOneLine && <><br /> — </>}Grosset</span>
 							</Typography>
         </StyledWrapper>
     )

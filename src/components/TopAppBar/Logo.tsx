@@ -16,7 +16,7 @@ const Logo = ({ width = 40 }: { width?: number }) => {
 		<Box sx={{ width }}>
 			<img
 				className={classes.images}
-				alt="Floriane Grosset's logo"
+				alt="logo"
 				src="./assets/logos/logo-black.png"
 			/>
 		</Box>

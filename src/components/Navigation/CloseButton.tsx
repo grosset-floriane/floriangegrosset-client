@@ -15,6 +15,9 @@ const CloseButton = () => {
 				onClick={() => dispatch(closeMenu())}
 				disableRipple
 				className={classes.link}
+				aria-label="close navigation"
+				aria-expanded="true"
+				aria-controls="menu"
 			>
 				<ListItemIcon variant="centered">
 					<CloseIcon color="action" />

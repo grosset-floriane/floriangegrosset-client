@@ -24,7 +24,7 @@ const About = () => {
 				<Typography mb={3}>
 					I am the founder of{' '}
 					<Link href="https://waawgallery.com" isExternal>
-						WAAW, a non-profit online gallery
+						<span aria-label="waaw">WAAW</span>, a non-profit online gallery
 		 		</Link>
 		 		. We aim to promote and help the creation of quality web-based
 		 		artworks.
