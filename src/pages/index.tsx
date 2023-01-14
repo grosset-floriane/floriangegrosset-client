@@ -4,7 +4,7 @@ import About from 'component-pages/About'
 import Contact from 'component-pages/Contact'
 import CV from 'component-pages/CV'
 
-function Pages() {
+const Pages = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<About />} />

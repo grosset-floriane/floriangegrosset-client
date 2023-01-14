@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import useStyles from './Navigation.styles'
 import { closeMenu } from 'state/slices/menu.slice'
 
-function CloseButton() {
+const CloseButton = () => {
 	const dispatch = useDispatch()
 	const classes = useStyles({})
 

@@ -10,7 +10,7 @@ const useStyles = makeStyles(() =>
 	}),
 )
 
-function Logo({ width = 40 }: { width?: number }) {
+const Logo = ({ width = 40 }: { width?: number }) => {
 	const classes = useStyles()
 	return (
 		<Box sx={{ width }}>

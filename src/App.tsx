@@ -4,7 +4,7 @@ import Navigation from './components/Navigation'
 import TopAppBar from './components/TopAppBar'
 import Pages from './pages'
 
-function App() {
+const App = () => {
 	const isOpen = useTypedSelector(state => state.menu.isOpen)
 
 	return (

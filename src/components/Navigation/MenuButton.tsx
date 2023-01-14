@@ -5,7 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import {useTypedSelector} from 'redux/typedSelector'
 import {toggleMenu} from 'state/slices/menu.slice'
 
-function MenuButton() {
+const MenuButton = () => {
 	const dispatch = useDispatch()
 	const {isOpen} = useTypedSelector(state => state.menu)
 
