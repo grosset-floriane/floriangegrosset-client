@@ -3,7 +3,6 @@ import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import { NavLink, LinkProps as RouterLinkProps } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import { Typography } from '@mui/material/'
 import useStyles from './Navigation.styles'
 import { useDispatch } from 'react-redux'
@@ -16,7 +15,7 @@ interface Props {
 	isActive: boolean
 }
 
-function NavItem({ to, text, isActive }: Props) {
+const NavItem = ({ to, text, isActive }: Props) => {
 	const classes = useStyles({isActive})
 	const dispatch = useDispatch()
 	const { isDesktop } = useMediaQuery()
@@ -54,11 +53,6 @@ function NavItem({ to, text, isActive }: Props) {
 			</ListItemButton>
 		</ListItem>
 	)
-}
-
-NavItem.propTypes = {
-	text: PropTypes.string.isRequired,
-	to: PropTypes.string.isRequired,
 }
 
 export default NavItem
