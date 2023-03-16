@@ -3,20 +3,37 @@ import {createTheme} from '@mui/material/styles'
 const TITLE_FONT = "'Lekton', monospace"
 const BODY_FONT = "'Open Sans', sans-serif"
 
+export const LIGTH_PALETTE = {
+	blue: {
+		main: '#A6BBF5',
+	},
+	grey: {
+		light: '#ECECEC',
+	},
+	sand: {
+		main: '#C2B49E',
+	},
+	black: {
+		main: '#000000d4',
+		dark: '#000000',
+	},
+
+}
+
 const lightTheme = createTheme({
 	palette: {
 		primary: {
-			main: '#A6BBF5',
+			main: LIGTH_PALETTE.blue.main,
 		},
 		secondary: {
-			main: '#C2B49E',
+			main: LIGTH_PALETTE.sand.main,
 		},
 		action: {
-			active: '#000000d4',
+			active: LIGTH_PALETTE.black.main,
 		},
 		background: {
-			default: '#ECECEC',
-			paper: '#ECECEC',
+			default: LIGTH_PALETTE.grey.light,
+			paper: LIGTH_PALETTE.grey.light,
 		},
 	},
 	typography: {
@@ -141,11 +158,11 @@ const lightTheme = createTheme({
 				'*': {
 					scrollBehavior: 'smooth',
 					'&::selection': {
-						backgroundColor: '#A6BBF5',
+						backgroundColor: LIGTH_PALETTE.blue.main,
 					},
 				},
 				body: {
-					backgroundColor: '#ECECEC',
+					backgroundColor: LIGTH_PALETTE.grey.light,
 				},
 			},
 		},
@@ -189,7 +206,7 @@ const lightTheme = createTheme({
 			styleOverrides: {
 				root: {
 					textDecoration: 'none',
-					color: 'rgba(0, 0, 0, 0.87)',
+					color: LIGTH_PALETTE.black.main,
 				},
 			},
 		},
