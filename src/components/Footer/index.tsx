@@ -3,12 +3,13 @@ import {Container, Typography, Grid} from '@mui/material'
 import {StyledLayout} from 'components/Layout/Layout.styles'
 import HeaderTitle from 'components/HeaderTitle'
 import Link from 'components/Link'
-import {EMAIL} from 'utils/constants'
 import {useStyles} from './Footer.styles'
 import {navigationLinks} from 'components/Navigation/navigationLinks'
+import useEmail from 'hooks/useEmail'
 
 const Footer = () => {
 	const classes = useStyles()
+	const {email, text} = useEmail()
 
 	return (
 		<Container component="footer" className={classes.wrapper}>
@@ -20,11 +21,11 @@ const Footer = () => {
 						sustainability and art.
 						<br />
 						<Link
-							href={`mailto:${EMAIL}`}
+							href={`mailto:${email}`}
 							isExternal
 							backgroundColor="primary"
 						>
-							{EMAIL}
+							{text}
 						</Link>
 					</Typography>
 					<Typography component="h2" variant="h6" mt={3}>

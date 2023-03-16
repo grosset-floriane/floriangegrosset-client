@@ -9,6 +9,7 @@ interface Props {
 	children: ReactNode
 	isExternal?: boolean
 	backgroundColor?: BackgroundColor
+	fontSize?: string
 }
 
 const Link = ({
@@ -16,8 +17,9 @@ const Link = ({
 	children,
 	isExternal = false,
 	backgroundColor = 'default',
+	fontSize,
 }: Props) => {
-	const classes = useStyles({backgroundColor})
+	const classes = useStyles({backgroundColor, fontSize})
 
 	return (
 		<MuiLink
