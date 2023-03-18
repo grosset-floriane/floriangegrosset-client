@@ -34,7 +34,7 @@ const Footer = () => {
 					<nav>
 						<ul className={classes.siteMapList}>
 							{navigationLinks.map(({to, label}) => (
-								<li>
+								<li key={label}>
 									<Link href={to} backgroundColor="primary">
 										{label}
 									</Link>
