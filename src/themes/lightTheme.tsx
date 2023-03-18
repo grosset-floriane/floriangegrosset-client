@@ -17,7 +17,15 @@ export const LIGTH_PALETTE = {
 		main: '#000000d4',
 		dark: '#000000',
 	},
-
+	red: {
+		main: '#F58A71',
+	},
+	green: {
+		main: '#C5DBA3',
+	},
+	orange: {
+		main: '#F5D391',
+	},
 }
 
 const lightTheme = createTheme({
@@ -34,6 +42,18 @@ const lightTheme = createTheme({
 		background: {
 			default: LIGTH_PALETTE.grey.light,
 			paper: LIGTH_PALETTE.grey.light,
+		},
+		error: {
+			main: LIGTH_PALETTE.red.main,
+		},
+		success: {
+			main: LIGTH_PALETTE.green.main,
+		},
+		warning: {
+			main: LIGTH_PALETTE.orange.main,
+		},
+		info: {
+			main: LIGTH_PALETTE.blue.main,
 		},
 	},
 	typography: {

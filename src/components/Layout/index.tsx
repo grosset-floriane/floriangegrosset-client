@@ -2,6 +2,7 @@ import React, {FC} from 'react'
 import Footer from 'components/Footer'
 import {StyledLayout} from './Layout.styles'
 import {Box} from '@mui/system'
+import Notification from 'components/Notification'
 
 const Layout: FC = ({children}) => {
 	return (
@@ -15,6 +16,7 @@ const Layout: FC = ({children}) => {
 			<StyledLayout container spacing={4} component="main">
 				{children}
 			</StyledLayout>
+			<Notification />
 			<Footer />
 		</Box>
 	)
