@@ -1,5 +1,5 @@
 import {makeStyles} from '@mui/styles'
-import { LIGTH_PALETTE } from 'themes/lightTheme'
+import {LIGTH_PALETTE} from 'themes/lightTheme'
 
 export const useStyles = makeStyles(theme => ({
 	container: {
@@ -12,6 +12,7 @@ export const useStyles = makeStyles(theme => ({
 		borderRadius: 24,
 		fontSize: 14,
 		fontWeight: 600,
+		border: 'none',
 		textDecoration: 'none',
 		'&:hover, &:focus-visible, &:active': {
 			outline: `2px solid ${theme.palette.action.active}`,
