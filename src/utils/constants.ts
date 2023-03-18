@@ -1,1 +1,1 @@
-export const EMAIL = 'contact@florianegrosset.com'
+

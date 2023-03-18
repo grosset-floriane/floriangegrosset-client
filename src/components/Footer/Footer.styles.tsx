@@ -15,4 +15,12 @@ export const useStyles = makeStyles(theme => ({
 			padding: theme.spacing(5, 0),
 		},
 	},
+	siteMapList: {
+		margin: 0,
+		padding: 0,
+		'& li': {
+			listStyle: 'none',
+			fontSize: '1.25rem',
+		},
+	},
 }))
