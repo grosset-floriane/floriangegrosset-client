@@ -17,7 +17,7 @@ const Footer = () => {
 				<Grid item xs={12} sm={8} lg={6} className={classes.gridItem}>
 					<HeaderTitle isOneLine />
 					<Typography variant="body2">
-						I am web developer passionate about accessibility,
+						I am a web developer passionate about accessibility,
 						sustainability and art.
 						<br />
 						<Link
