@@ -17,7 +17,7 @@ const Footer = () => {
 				<Grid item xs={12} sm={8} lg={6} className={classes.gridItem}>
 					<HeaderTitle isOneLine />
 					<Typography variant="body2">
-						I am web developer passionate about accessibility,
+						I am a web developer passionate about accessibility,
 						sustainability and art.
 						<br />
 						<Link
@@ -34,7 +34,7 @@ const Footer = () => {
 					<nav>
 						<ul className={classes.siteMapList}>
 							{navigationLinks.map(({to, label}) => (
-								<li>
+								<li key={label}>
 									<Link href={to} backgroundColor="primary">
 										{label}
 									</Link>

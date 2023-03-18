@@ -5,8 +5,10 @@ import LayoutColumn from 'components/Layout/LayoutColumn'
 import Link from 'components/Link'
 import H1 from 'components/H1/H1'
 import Button from 'components/Button'
-import {Box} from '@mui/system'
 import useEmail from 'hooks/useEmail'
+import {CopyToClipboard} from 'react-copy-to-clipboard'
+import ActionsContainer from 'components/ActionsContainer'
+import {showSuccessNotification} from 'utils/showNotification'
 
 const SOCIAL_MEDIA = [
 	{
@@ -26,24 +28,28 @@ const Contact = () => {
 		<Layout>
 			<LayoutColumn marginTop={0}>
 				<H1 description="Floriane's contact information">Contact</H1>
-				<Typography variant="bodyImpact">
+				<Typography variant="bodyImpact" mb={1}>
 					The easiest way to contact me is by email. Don’t hesitate to
 					drop me a line to say hi!
 					<br />
-					<Link href={`mailto:${email}`}>{text}</Link>
+					<Typography component="span">{text}</Typography>
 				</Typography>
+				<ActionsContainer>
+					<CopyToClipboard
+						text={email}
+						onCopy={() => showSuccessNotification('Email copied!')}
+					>
+						<Button>copy email</Button>
+					</CopyToClipboard>
+					<Button href={`mailto:${email}`} isLink isExternal>
+						open mail box
+					</Button>
+				</ActionsContainer>
 
 				<Typography variant="h5" component="h3" mt={5}>
 					On social networks
 				</Typography>
-				<Box
-					mt={2}
-					display="flex"
-					gap={2}
-					component="ul"
-					ml={0}
-					style={{padding: 0}}
-				>
+				<ActionsContainer>
 					{SOCIAL_MEDIA.map(({label, link}) => (
 						<li key={label} style={{listStyle: 'none'}}>
 							<Button href={link} isLink isExternal>
@@ -51,7 +57,7 @@ const Contact = () => {
 							</Button>
 						</li>
 					))}
-				</Box>
+				</ActionsContainer>
 			</LayoutColumn>
 		</Layout>
 	)

@@ -12,11 +12,11 @@ import useStyles from './TopAppBar.styles'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Slide from '@mui/material/Slide'
 import NavItem from 'components/Navigation/NavItem'
-import { useTypedSelector } from 'redux/typedSelector'
+import {useTypedSelector} from 'redux/typedSelector'
 import useMediaQuery from 'hooks/useMediaQuery'
-import { navigationLinks } from 'components/Navigation/navigationLinks'
+import {navigationLinks} from 'components/Navigation/navigationLinks'
 import HeaderTitle from 'components/HeaderTitle'
-import { useLocation } from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 
 interface Props {
 	/* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -24,7 +24,7 @@ interface Props {
 	isOpen: boolean
 }
 
-const HideOnScroll = ({ children, isOpen }: Props) => {
+const HideOnScroll = ({children, isOpen}: Props) => {
 	const trigger = useScrollTrigger()
 
 	return (
@@ -35,10 +35,10 @@ const HideOnScroll = ({ children, isOpen }: Props) => {
 }
 
 const TopAppBar = () => {
-	const { isOpen } = useTypedSelector(state => state.menu)
-	const classes = useStyles({ isOpen })
-	const { isDesktop } = useMediaQuery()
-	const { pathname } = useLocation()
+	const {isOpen} = useTypedSelector(state => state.menu)
+	const classes = useStyles({isOpen})
+	const {isDesktop} = useMediaQuery()
+	const {pathname} = useLocation()
 
 	const to = '/'
 	const renderLink = React.useMemo(
@@ -61,11 +61,11 @@ const TopAppBar = () => {
 
 	return (
 		<HideOnScroll isOpen={isOpen}>
-			<Box sx={{ flexGrow: 1 }}>
+			<Box sx={{flexGrow: 1}}>
 				<AppBar
 					position="fixed"
 					color={isOpen ? 'primary' : 'background'}
-					sx={{ zIndex: 999999 }}
+					sx={{zIndex: 999999}}
 				>
 					<Toolbar variant="dense" className={classes.toolbar}>
 						<MuiLink
@@ -75,9 +75,20 @@ const TopAppBar = () => {
 						>
 							<HeaderTitle />
 						</MuiLink>
-						{isDesktop ? (<nav className={classes.nav}>
-							{navigationLinks.map(({ to, label }) => (<NavItem to={to} text={label} isActive={to === pathname} />))}</nav>) : <MenuButton />}
-
+						{isDesktop ? (
+							<nav className={classes.nav}>
+								{navigationLinks.map(({to, label}) => (
+									<NavItem
+										key={label}
+										to={to}
+										text={label}
+										isActive={to === pathname}
+									/>
+								))}
+							</nav>
+						) : (
+							<MenuButton />
+						)}
 					</Toolbar>
 				</AppBar>
 			</Box>
