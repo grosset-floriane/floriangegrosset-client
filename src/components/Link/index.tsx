@@ -10,6 +10,7 @@ interface Props {
 	isExternal?: boolean
 	backgroundColor?: BackgroundColor
 	fontSize?: string
+	isActive?: boolean
 }
 
 const Link = ({
@@ -18,6 +19,7 @@ const Link = ({
 	isExternal = false,
 	backgroundColor = 'default',
 	fontSize,
+	isActive = false,
 }: Props) => {
 	const classes = useStyles({backgroundColor, fontSize})
 
@@ -25,7 +27,8 @@ const Link = ({
 		<MuiLink
 			href={href}
 			target={isExternal ? '_BLANK' : ''}
-			className={classes.link}
+			className={`${classes.link} ${isActive && classes.active}`}
+			aria-current={isActive ? 'page' : undefined}
 		>
 			{children}
 			{isExternal && <ExternalIcon />}

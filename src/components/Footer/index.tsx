@@ -6,10 +6,12 @@ import Link from 'components/Link'
 import {useStyles} from './Footer.styles'
 import {navigationLinks} from 'components/Navigation/navigationLinks'
 import useEmail from 'hooks/useEmail'
+import {useLocation} from 'react-router-dom'
 
 const Footer = () => {
 	const classes = useStyles()
 	const {email, text} = useEmail()
+	const {pathname} = useLocation()
 
 	return (
 		<Container component="footer" className={classes.wrapper}>
@@ -35,7 +37,11 @@ const Footer = () => {
 						<ul className={classes.siteMapList}>
 							{navigationLinks.map(({to, label}) => (
 								<li key={label}>
-									<Link href={to} backgroundColor="primary">
+									<Link
+										href={to}
+										backgroundColor="primary"
+										isActive={pathname === to}
+									>
 										{label}
 									</Link>
 								</li>
