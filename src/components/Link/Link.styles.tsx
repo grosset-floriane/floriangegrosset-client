@@ -18,4 +18,7 @@ export const useStyles = makeStyles(theme => ({
 					: theme.palette.primary.main,
 		},
 	},
+	active: {
+		textDecoration: 'underline',
+	},
 }))
