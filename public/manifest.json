@@ -6,7 +6,7 @@
 			"src": "assets/logos/logo-black.png",
 			"type": "image/png",
 			"sizes": "356x357"
-		},
+		}
 	],
 	"start_url": ".",
 	"display": "standalone",
