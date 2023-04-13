@@ -1,8 +1,10 @@
-import { combineReducers } from 'redux';
-import menuReducer from '../features/menu/menuReducer';
+import {combineReducers} from 'redux'
+import menuReducer from 'state/slices/menu.slice'
+import notificationReducer from 'state/slices/notification.slice'
 
 const rootReducer = combineReducers({
-    menu: menuReducer
-});
+	menu: menuReducer,
+	notification: notificationReducer,
+})
 
-export default rootReducer;
+export default rootReducer

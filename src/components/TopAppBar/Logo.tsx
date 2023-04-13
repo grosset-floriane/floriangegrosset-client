@@ -1,28 +1,26 @@
-import React from 'react';
-import Box from '@mui/material/Box';
-import { createStyles, makeStyles } from '@mui/styles';
+import React from 'react'
+import Box from '@mui/material/Box'
+import { createStyles, makeStyles } from '@mui/styles'
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    images: {
-      width: '100%',
-    },
-  }),
-);
+const useStyles = makeStyles(() =>
+	createStyles({
+		images: {
+			width: '100%',
+		},
+	}),
+)
 
-function Logo() {
-    const classes = useStyles();
-    return (
-        <Box sx={{ width: 40 }}>
-            <img 
-                className={classes.images}
-                alt="Floriane Grosset's logo"
-                src="./assets/logos/logo-black.png"
-            />
-        </Box>
-        
-    );
+const Logo = ({ width = 40 }: { width?: number }) => {
+	const classes = useStyles()
+	return (
+		<Box sx={{ width }}>
+			<img
+				className={classes.images}
+				alt="logo"
+				src="./assets/logos/logo-black.png"
+			/>
+		</Box>
+	)
 }
 
-
-export default Logo;
+export default Logo
